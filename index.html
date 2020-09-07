@@ -1,12 +1,34 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>ROCK-PAPER-SCISSORS</title>
 </head>
-<body>
 
+<body>
+    <div class="container">
+        <h1>ROCK-PAPER-SCISSORS</h1>
+        <h1 id="choice-header">Make Your Choice</h1>
+        <section class="main">
+            <div id="rock" class="item"></div>
+            <div id="paper" class="item"></div>
+            <div id="scissors" class="item"></div>
+        </section>
+        <ul id="game-message"></ul>
+        <div id="scores">
+            <div id="user-score">
+                <h3>User</h3>
+                <h3 id="user-count">0</h3>
+            </div>
+            <div id="computer-score">
+                <h3>Computer</h3>
+                <h3 id="computer-count">0</h3>
+            </div>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
+
 </html>

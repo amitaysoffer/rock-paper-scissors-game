@@ -1,0 +1,81 @@
+#rock {
+    background-image: url(https://1000awesomethings.com/wp-content/uploads/2008/08/rock.jpg);     
+}
+#paper {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9NqUjHallWLEASLDALo9AQiegF_lpNDAOOg&usqp=CAU);
+}
+#scissors {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSn54otxwl_XyJLQo30feSOnOJFkBfE0Um4Rw&usqp=CAU);  
+}
+
+body {
+    background: #a3b2c7;
+}
+.container {
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    background-color: #cccccc;
+    height: 150px;
+    width: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.result-btn {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    background: lightblue;
+}
+
+.versus-message {
+    text-transform: uppercase;
+}
+
+.won, .lost, .draw {
+    font-size: 45px;
+    font-family: monospace;
+    width: 100%;
+}
+
+.won:after {
+    background: #97db98;
+    content: 'You are victorious!';
+}
+
+.lost:after {
+    background: #d81850;
+    content: 'Ouch.. You lost :-(';
+}
+
+.draw:after {
+    content: 'Oh well, its a draw';
+    background: lightpink;
+}
+
+#scores {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#user-score {
+    border: #97db98 solid 3px;
+    width: 25%;
+}
+
+#computer-score {
+    border: #d81850 solid 3px;
+    width: 25%;
+}
