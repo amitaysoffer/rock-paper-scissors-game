@@ -4,7 +4,7 @@ document.querySelectorAll('.item').forEach(item => {
     startGame(e.target.parentElement.id);
   });
 });
- 
+
 function startGame(playerItem) {
   const computerGuessedNum = Math.floor(Math.random() * 3) + 1;
   const itemArray = ['rock', 'paper', 'scissors']
