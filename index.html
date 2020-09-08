@@ -4,30 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="" href="images/">
     <title>ROCK-PAPER-SCISSORS</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1>ROCK-PAPER-SCISSORS</h1>
-        <h1 id="choice-header">Make Your Choice</h1>
-        <section class="main">
-            <div id="rock" class="item"></div>
-            <div id="paper" class="item"></div>
-            <div id="scissors" class="item"></div>
-        </section>
-        <ul id="game-message"></ul>
+    <section id="game-container">
+        <h1 class="header">Rock Paper Scissors</h1>
+        <button id="restart-btn" class="restart-btn btn">Restart Game</button>
         <div id="scores">
-            <div id="user-score">
-                <h3>User</h3>
-                <h3 id="user-count">0</h3>
+            <div id="player-score" class="score">
+                <h3>Player</h3>
+                <h3 id="player-count">0</h3>
             </div>
-            <div id="computer-score">
+            <div id="computer-score" class="score">
                 <h3>Computer</h3>
                 <h3 id="computer-count">0</h3>
             </div>
         </div>
-    </div>
+        <h2 id="choice-header">Make Your Choice</h2>
+        <div id="items-list">
+            <div id="rock" class="item">
+                <img src="http://www.armandobarros.com/Projects/rps/assets/img/rock.svg" alt="rock">
+            </div>
+            <div id="paper" class="item">
+                <img src="http://www.armandobarros.com/Projects/rps/assets/img/paper.svg" alt="paper">
+            </div>
+            <div id="scissors" class="item">
+                <img src="http://www.armandobarros.com/Projects/rps/assets/img/scissors.svg" alt="scissors">
+            </div>
+        </div>
+        <div id="result-container"></div>
+    </section>
+
     <script src="main.js"></script>
 </body>
 

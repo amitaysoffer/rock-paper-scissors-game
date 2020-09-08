@@ -1,10 +1,10 @@
 # rock-paper-scissors-game ultimate game
 
-*The classic rock-paper-scissors game which keep scores. Written in JS, HTML, CSS.*
+*Classic rock-paper-scissors game which keep scores. Written in JS, HTML, CSS.*
 
 Click [HERE](https://amitaysoffer.github.io/rock-paper-scissors-game/index.html) to let the fun begin.
 
-![Screenshot 2020-09-07 at 23 01 36](https://user-images.githubusercontent.com/31068256/92418189-1df47000-f15e-11ea-8e47-260e481c2201.png)
+![Screenshot 2020-09-08 at 19 45 08](https://user-images.githubusercontent.com/31068256/92515815-1e4b4480-f20c-11ea-9478-546034d61b94.png)
 
 
 ## Summary

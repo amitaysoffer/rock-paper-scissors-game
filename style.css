@@ -1,47 +1,96 @@
-#rock {
-    background-image: url(https://1000awesomethings.com/wp-content/uploads/2008/08/rock.jpg);     
-}
-#paper {
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT9NqUjHallWLEASLDALo9AQiegF_lpNDAOOg&usqp=CAU);
-}
-#scissors {
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSn54otxwl_XyJLQo30feSOnOJFkBfE0Um4Rw&usqp=CAU);  
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background: #a3b2c7;
+    background: #a3b2c7;;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.5;
 }
-.container {
-    width: 50%;
-    margin: 100px auto;
+
+#game-container {
+    width: 70%;
+    margin: 50px auto;
     text-align: center;
 }
 
-.main {
-    display: flex;
-    justify-content: space-between;
+h1, h2 {
+    margin: 20px 0;
 }
 
-.item {
-    background-color: #cccccc;
-    height: 150px;
-    width: 150px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 10px;
+.btn {
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.result-btn {
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 10px;
-    background: lightblue;
+.header {
+    font-size: 40px;
 }
 
-.versus-message {
-    text-transform: uppercase;
+#restart-btn {
+    margin-bottom: 20px;
+}
+
+#restart-btn:hover {
+    background-color:  #3785b8;
+  }
+
+#scores {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.score {
+    width: 100%;
+    color: #fff;
+}
+
+.score h3 {
+    font-weight: 400;
+}
+
+#player-score {
+    background: #333;
+}
+
+#computer-score {
+    background: #0000ff;
+}
+
+#items-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.item {
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    cursor: pointer; 
+    border: 2px solid #333;
+    border-radius: 50%;
+    padding: 10px;
+    background: #3785b8;
+}
+
+#rock:hover,
+#paper:hover,
+#scissors:hover {
+        -moz-transform: rotate(40deg);
+        -webkit-transform: rotate(40deg);
+        transform: rotate(40deg);
+        
+}
+
+#rock, #paper, #scissors {
+	-webkit-transition: all 0.70s ease-in-out;
+	-moz-transition: all 0.70s ease-in-out; 
+	transition: all 0.70s ease-in-out;
 }
 
 .won, .lost, .draw {
@@ -50,32 +99,26 @@ body {
     width: 100%;
 }
 
-.won:after {
+.won {
     background: #97db98;
-    content: 'You are victorious!';
+}
+
+.won:after {
+    content: 'You are Victorious!';
+}
+
+.lost { 
+    background: #d81850;
 }
 
 .lost:after {
-    background: #d81850;
-    content: 'Ouch.. You lost :-(';
+    content: 'Ouch.. You have lost :-(';
 }
 
-.draw:after {
-    content: 'Oh well, its a draw';
+.draw {
     background: lightpink;
 }
 
-#scores {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#user-score {
-    border: #97db98 solid 3px;
-    width: 25%;
-}
-
-#computer-score {
-    border: #d81850 solid 3px;
-    width: 25%;
+.draw:after {
+    content: 'Oh well, it\'s a draw';
 }

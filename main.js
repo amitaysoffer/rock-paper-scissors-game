@@ -1,45 +1,44 @@
-// Add the user's choice event listener
+// Add the player's choice event listener
 document.querySelectorAll('.item').forEach(item => {
   item.addEventListener('click', function (e) {
-    startGame(e.target.id);
+    startGame(e.target.parentElement.id);
   });
 });
-
-function startGame(userItem) {
+ 
+function startGame(playerItem) {
   const computerGuessedNum = Math.floor(Math.random() * 3) + 1;
   const itemArray = ['rock', 'paper', 'scissors']
   const computerItem = itemArray[computerGuessedNum - 1]
 
-  renderItems(userItem, computerItem)
-
-  if ((userItem === 'rock' && computerItem === 'paper' || userItem === 'paper' && computerItem === 'scissors' || userItem === 'scissors' && computerItem === 'rock')) renderResult('lost')
-
-  if (userItem === 'rock' && computerItem === 'scissors' || userItem === 'paper' && computerItem === 'rock' || userItem === 'scissors' && computerItem === 'paper') renderResult('won')
-
-  if (userItem === 'rock' && computerItem === 'rock' || userItem === 'paper' && computerItem === 'paper' || userItem === 'scissors' && computerItem === 'scissors') renderResult('draw');
+  return (playerItem === 'rock' && computerItem === 'paper' || playerItem === 'paper' && computerItem === 'scissors' || playerItem === 'scissors' && computerItem === 'rock') ? renderItems(playerItem, computerItem, 'lost')
+    : playerItem === computerItem ? renderItems(playerItem, computerItem, 'draw')
+      : renderItems(playerItem, computerItem, 'won')
 };
 
-function addScore(score) {
-  const userCount = document.getElementById('user-count');
-  const computerCount = document.getElementById('computer-count');
-
-  if (score === 'won') userCount.innerText++;
-  if (score === 'lost') computerCount.innerText++;
-}
-
-function renderItems(userItem, computerItem) {
-  const resultList = document.getElementById('game-message')
+const renderItems = function (playerItem, computerItem, resultsClass) {
+  const result = document.getElementById('result-container')
   const div = document.createElement('div');
   div.classList = 'result'
 
-  resultList.innerHTML = `<h1 class="versus-message">${userItem} vs. ${computerItem} !!</h1>`;
-}
-
-function renderResult(resultsClass) {
-  const choiceHeader = document.getElementById('choice-header');
-  choiceHeader.innerText = ''
-  choiceHeader.classList = resultsClass
+  result.innerHTML = `
+  <h2 class="choice player-choice">You have chosen ${playerItem}</h2>
+  <h2 class="choice computer-choice">Computer has chosen ${computerItem}</h2>
+  <h1 class="result ${resultsClass}"></h1>
+  `;
 
   addScore(resultsClass);
 }
 
+const playerCount = document.getElementById('player-count');
+const computerCount = document.getElementById('computer-count');
+const addScore = function (score) {
+  if (score === 'won') playerCount.innerText++;
+  if (score === 'lost') computerCount.innerText++;
+}
+
+// Reseting score and deleting score message
+document.getElementById('restart-btn').addEventListener('click', function () {
+  playerCount.innerText = 0;
+  computerCount.innerText = 0;
+  document.getElementById('result-container').textContent = '';
+});
